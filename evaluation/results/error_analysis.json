@@ -1,0 +1,36 @@
+{
+  "total_test_rows": 9000,
+  "error_categories": [
+    {
+      "name": "Under-forecast",
+      "count": 887,
+      "pct": 9.9,
+      "impact": "Stockout risk"
+    },
+    {
+      "name": "Over-forecast",
+      "count": 940,
+      "pct": 10.4,
+      "impact": "Excess inventory cost"
+    },
+    {
+      "name": "Disruption failure",
+      "count": 55,
+      "pct": 0.6,
+      "impact": "Fulfillment gap during disruption"
+    },
+    {
+      "name": "Festival miss",
+      "count": 179,
+      "pct": 2.0,
+      "impact": "Demand spike missed"
+    },
+    {
+      "name": "Within interval",
+      "count": 7069,
+      "pct": 78.5,
+      "impact": "None \u2014 correctly bounded"
+    }
+  ],
+  "coverage_80": 0.895
+}

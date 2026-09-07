@@ -1,0 +1,11 @@
+store_id,store_name,city,store_type,store_size,customer_volume,location_type
+S011,Madurai Central,Madurai,Large Supermarket,large,2000,urban
+S017,Salem Hub,Salem,Wholesale,large,3000,urban
+S037,Coimbatore Market,Coimbatore,Supermarket,medium,1500,urban
+S042,Trichy Bazaar,Trichy,Neighborhood,small,800,suburban
+S051,Chennai Express,Chennai,Large Supermarket,large,2500,urban
+S063,Erode Store,Erode,Neighborhood,small,600,rural
+S071,Vellore Mart,Vellore,Supermarket,medium,1200,suburban
+S082,Dindigul Grocery,Dindigul,Neighborhood,small,500,rural
+S094,Tirunelveli Center,Tirunelveli,Supermarket,medium,1100,suburban
+S105,Puducherry Shop,Puducherry,Neighborhood,small,700,urban

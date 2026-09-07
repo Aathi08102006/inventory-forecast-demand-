@@ -1,0 +1,11 @@
+product_id,product_name,category,base_price,weather_sensitivity,festival_sensitivity
+P001,Cold Drinks 2L,Beverages,50,0.9,0.6
+P002,Mineral Water 1L,Beverages,20,0.8,0.4
+P003,Milk 1L,Dairy,60,0.1,0.3
+P004,Curd 500g,Dairy,45,0.3,0.5
+P005,Chips 200g,Snacks,35,0.2,0.7
+P006,Biscuits 400g,Snacks,40,0.1,0.5
+P007,Tomatoes 1kg,Fresh Produce,30,0.4,0.3
+P008,Onions 1kg,Fresh Produce,25,0.2,0.4
+P009,Ice Cream 500ml,Frozen,80,0.95,0.5
+P010,Rice 5kg,Staples,250,0.0,0.6

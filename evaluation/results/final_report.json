@@ -1,0 +1,53 @@
+{
+  "project": "Demandly AI — Uncertainty-Aware Demand Forecasting Assistant",
+  "data_notice": "All results are measured on synthetic data generated for demonstration purposes only.",
+  "dataset": {
+    "total_rows": 73100,
+    "stores": 10,
+    "products": 10,
+    "date_range": "2023-01-01 to 2024-12-31",
+    "train_rows": 64100,
+    "test_rows": 9000
+  },
+  "model": {
+    "type": "Quantile Gradient Boosting Regression",
+    "quantiles": [0.1, 0.25, 0.5, 0.75, 0.9],
+    "n_estimators": 200,
+    "max_depth": 5,
+    "learning_rate": 0.08
+  },
+  "results": {
+    "baseline": {"mae": 39.13, "rmse": 55.66, "mape": 18.31},
+    "demandly":  {"mae": 24.95, "rmse": 34.76, "mape": 11.98},
+    "improvement_mae_pct": 36.2,
+    "improvement_rmse_pct": 37.5,
+    "improvement_mape_pct": 34.6
+  },
+  "calibration": {
+    "interval_50": {"target": 0.50, "actual": 0.488, "error": 0.012},
+    "interval_80": {"target": 0.80, "actual": 0.785, "error": 0.015}
+  },
+  "error_analysis": {
+    "within_interval_80": {"count": 7069, "pct": 78.5},
+    "under_forecast":     {"count": 887,  "pct": 9.9},
+    "over_forecast":      {"count": 940,  "pct": 10.4},
+    "disruption_failure": {"count": 55,   "pct": 0.6},
+    "festival_miss":      {"count": 179,  "pct": 2.0}
+  },
+  "edge_cases": [
+    {"case": "Festival Data Missing",  "status": "PASS"},
+    {"case": "Extreme Weather 45C",    "status": "PASS"},
+    {"case": "Delivery Delay 12h",     "status": "PASS"},
+    {"case": "Demand Spike +50%",      "status": "PARTIAL"},
+    {"case": "Missing Price/Weather",  "status": "PASS"},
+    {"case": "New Store Cold Start",   "status": "PASS"}
+  ],
+  "tests": {"total": 34, "passed": 34, "failed": 0},
+  "known_limitations": [
+    "Synthetic data only — real-world accuracy will differ",
+    "Demand spike detection is partial (PARTIAL status above)",
+    "Festival matching simplified to city level",
+    "No persistent planner decision storage in prototype",
+    "LLM integration requires Anthropic API key"
+  ]
+}

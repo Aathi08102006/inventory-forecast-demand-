@@ -1,0 +1,22 @@
+[
+  {
+    "store_name": "Coimbatore Market",
+    "product_name": "Chips 200g",
+    "forecast": 376,
+    "range": "211\u2013541",
+    "planner_action": "Balanced",
+    "override": false,
+    "reason": "yes",
+    "recorded_on": "2026-09-07"
+  },
+  {
+    "store_name": "Salem Hub",
+    "product_name": "Chips 200g",
+    "forecast": 579,
+    "range": "324\u2013834",
+    "planner_action": "Conservative",
+    "override": true,
+    "reason": "",
+    "recorded_on": "2026-09-07"
+  }
+]

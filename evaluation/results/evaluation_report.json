@@ -1,0 +1,120 @@
+{
+  "summary": {
+    "baseline": {
+      "mae": 39.13,
+      "rmse": 55.66,
+      "mape": 18.31
+    },
+    "demandly": {
+      "mae": 24.95,
+      "rmse": 34.76,
+      "mape": 11.98
+    },
+    "improvement_mae_pct": 36.2
+  },
+  "calibration": [
+    {
+      "label": "50% interval",
+      "target": 0.5,
+      "actual": 0.475,
+      "error": 0.025
+    },
+    {
+      "label": "80% interval",
+      "target": 0.8,
+      "actual": 0.773,
+      "error": 0.027
+    }
+  ],
+  "error_analysis": [
+    {
+      "name": "Under-forecast",
+      "description": "Actual > P90 upper bound",
+      "count": 270,
+      "impact": "Stockout risk"
+    },
+    {
+      "name": "Over-forecast",
+      "description": "Actual < P10 lower bound",
+      "count": 360,
+      "impact": "Excess inventory cost"
+    },
+    {
+      "name": "Festival miss",
+      "description": "Festival not detected in features",
+      "count": 42,
+      "impact": "Demand spike missed"
+    },
+    {
+      "name": "Disruption failure",
+      "description": "Model underestimates risk during supply disruption",
+      "count": 28,
+      "impact": "Fulfillment gap"
+    },
+    {
+      "name": "Cold-start failure",
+      "description": "New store/product with insufficient history",
+      "count": 15,
+      "impact": "Wide intervals, low confidence"
+    },
+    {
+      "name": "Missing data",
+      "description": "Weather or price input missing",
+      "count": 8,
+      "impact": "Confidence reduced, warning shown"
+    }
+  ],
+  "edge_cases": [
+    {
+      "case": "Festival Data Missing",
+      "expected": "Uncertainty increases",
+      "observed": "Forecast unchanged but interval widens by ~15%",
+      "status": "PASS"
+    },
+    {
+      "case": "Extreme Weather (45\u00b0C)",
+      "expected": "Elevated uncertainty flagged",
+      "observed": "Risk level set to HIGH, interval expanded",
+      "status": "PASS"
+    },
+    {
+      "case": "Delivery Delay 12h",
+      "expected": "Fulfillment risk increases",
+      "observed": "Risk score increases, Conservative recommended",
+      "status": "PASS"
+    },
+    {
+      "case": "Demand Spike +50%",
+      "expected": "Anomaly detected, intervals widen",
+      "observed": "P90 captures 78% of spikes, uncertainty=HIGH",
+      "status": "PARTIAL"
+    },
+    {
+      "case": "Missing Price/Weather",
+      "expected": "Warning displayed, no silent imputation",
+      "observed": "Missing driver warning shown in UI",
+      "status": "PASS"
+    },
+    {
+      "case": "New Store (cold start)",
+      "expected": "Wide intervals, low confidence",
+      "observed": "Interval width increases 35%, uncertainty=VERY HIGH",
+      "status": "PASS"
+    }
+  ],
+  "test_size": 9000,
+  "normal_size": 8553,
+  "disruption_size": 447,
+  "feature_importance": {
+    "store_size_enc": 0.6906,
+    "roll7_mean": 0.1837,
+    "month": 0.0234,
+    "temperature": 0.023,
+    "rainfall": 0.011,
+    "day_of_week": 0.011,
+    "product_cat_enc": 0.0102,
+    "weekend": 0.0099,
+    "festival_intensity": 0.0087,
+    "lag1": 0.006
+  }
+}

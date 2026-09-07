@@ -1,0 +1,15 @@
+{
+  "name": "demandly-ai",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.8.0",
+    "lucide-react": "^0.383.0"
+  },
+  "scripts": {
+    "start": "python ../backend/main.py",
+    "build": "echo 'Demandly is served by the Python backend; no frontend build is required.'"
+  }
+}

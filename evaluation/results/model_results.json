@@ -1,0 +1,30 @@
+{
+  "baseline": {
+    "mae": 39.13,
+    "rmse": 55.66,
+    "mape": 18.31
+  },
+  "demandly": {
+    "mae": 24.95,
+    "rmse": 34.76,
+    "mape": 11.98
+  },
+  "coverage": {
+    "pct80": 0.785,
+    "pct50": 0.488
+  },
+  "feature_importance": {
+    "store_size_enc": 0.6906,
+    "roll7_mean": 0.1837,
+    "month": 0.0234,
+    "temperature": 0.023,
+    "rainfall": 0.011,
+    "day_of_week": 0.011,
+    "product_cat_enc": 0.0102,
+    "weekend": 0.0099,
+    "festival_intensity": 0.0087,
+    "lag1": 0.006
+  },
+  "train_size": 64100,
+  "test_size": 9000
+}
